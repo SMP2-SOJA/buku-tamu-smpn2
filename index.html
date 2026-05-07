@@ -2,15 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buku Tamu Pameran - SMPN 2 Soyo Jaya</title>
-    <!-- Tailwind CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Buku Tamu Pameran - SMP Negeri 2 Soyo Jaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <script>
@@ -27,132 +24,122 @@
         body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
         
         /* Animasi Kustom */
-        .fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
-        .float-slow { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-15px) rotate(2deg); } 100% { transform: translateY(0px) rotate(0deg); } }
+        .float-slow { animation: float 8s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-15px) scale(1.05); } 100% { transform: translateY(0px) scale(1); } }
 
         .pulse-soft { animation: pulseSoft 2s infinite; }
         @keyframes pulseSoft { 0% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(13, 148, 136, 0); } 100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0); } }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        .input-group:focus-within .icon-wrap { color: #0d9488; }
+        /* Animasi Modal Bounce */
+        .modal-bounce-in { animation: modalBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+        @keyframes modalBounce { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
+
+        /* Focus Ring Custom */
+        .input-group:focus-within .icon-wrap { color: #0d9488; transform: scale(1.1); transition: all 0.3s ease; }
     </style>
 </head>
-<body class="text-gray-800 antialiased overflow-x-hidden min-h-screen relative">
+<body class="text-gray-800 antialiased overflow-x-hidden min-h-screen relative selection:bg-teal-200 selection:text-teal-900">
 
-    <!-- Elemen Dekoratif Animasi -->
-    <div class="fixed top-[-10%] left-[-5%] w-[40vw] h-[40vw] bg-teal-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-30 pointer-events-none float-slow z-0"></div>
-    <div class="fixed top-[20%] right-[-10%] w-[35vw] h-[35vw] bg-pink-300 rounded-full mix-blend-multiply filter blur-[80px] opacity-20 pointer-events-none float-slow" style="animation-delay: 2s;"></div>
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] md:w-[30vw] md:h-[30vw] bg-teal-300/40 rounded-full mix-blend-multiply filter blur-[70px] pointer-events-none float-slow z-0"></div>
+    <div class="fixed top-[20%] right-[-10%] w-[45vw] h-[45vw] md:w-[25vw] md:h-[25vw] bg-pink-300/30 rounded-full mix-blend-multiply filter blur-[70px] pointer-events-none float-slow" style="animation-delay: 2s;"></div>
+    <div class="fixed bottom-[-10%] left-[20%] w-[40vw] h-[40vw] md:w-[20vw] md:h-[20vw] bg-yellow-300/30 rounded-full mix-blend-multiply filter blur-[70px] pointer-events-none float-slow" style="animation-delay: 4s;"></div>
     
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10">
         
-        <!-- HEADER DENGAN LOGO -->
-        <header class="flex flex-col md:flex-row items-center justify-between mb-10 fade-in-up">
-            <div class="flex items-center gap-4 mb-4 md:mb-0">
-                <!-- Logo Sekolah (Menggunakan logo sekolah yang diunggah) -->
-                <div class="w-20 h-20 shrink-0 rounded-full bg-white shadow-md p-1 border-2 border-teal-100 overflow-hidden">
-                    <img src="logo-sekolah.jpg" alt="Logo SMPN 2 Soyo Jaya" class="w-full h-full object-contain transform scale-110">
+        <header class="flex flex-col md:flex-row items-center justify-between mb-8 fade-in-up bg-white/60 backdrop-blur-md p-4 rounded-3xl shadow-sm border border-white/50">
+            <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-0 text-center md:text-left">
+                <div class="w-14 h-14 md:w-16 md:h-16 shrink-0 rounded-full bg-white shadow-sm p-0.5 border border-teal-100 overflow-hidden">
+                    <img src="logo-sekolah.jpg" alt="Logo Sekolah" class="w-full h-full object-contain" onerror="this.src='https://ui-avatars.com/api/?name=SMP&background=0d9488&color=fff'">
                 </div>
                 <div>
-                    <h2 class="text-sm font-bold tracking-widest text-primary uppercase">SMPN 2 Soyo Jaya</h2>
-                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">Buku Tamu Digital</h1>
-                    <p class="text-gray-500 font-medium text-sm md:text-base">Bazar dan Pameran Murid Kelas IX</p>
+                    <h2 class="text-[10px] md:text-xs font-bold tracking-widest text-primary uppercase">SMP Negeri 2 Soyo Jaya</h2>
+                    <h1 class="text-xl md:text-3xl font-extrabold text-gray-900 tracking-tight leading-none mt-1">Buku Tamu Digital</h1>
+                    <p class="text-gray-500 font-medium text-[11px] md:text-sm mt-1">Bazar & Pameran Murid Kelas IX</p>
                 </div>
             </div>
-            <div class="text-center md:text-right">
-                <p class="font-brush text-2xl md:text-3xl text-secondary -rotate-2 transform">
-                    "Mencatat Kehadiran, Menghubungkan Kreativitas"
+            <div class="text-center md:text-right flex items-center justify-center gap-3 opacity-90">
+                <i class="fas fa-paint-brush text-secondary text-xl opacity-60"></i>
+                <p class="font-brush text-xl md:text-2xl text-teal-700 transform -rotate-2">
+                    "Mencatat Kehadiran,<br class="md:hidden"> Menghubungkan Kreativitas"
                 </p>
             </div>
         </header>
 
-        <!-- MAIN LAYOUT -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
-            <!-- KOLOM KIRI (Info Acara & Statistik Realtime) -->
-            <div class="lg:col-span-5 space-y-6 fade-in-up" style="animation-delay: 0.1s;">
+            <div class="lg:col-span-5 space-y-5 fade-in-up" style="animation-delay: 0.1s;">
                 
-                <!-- Tema Card -->
-                <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 shadow-xl text-white relative overflow-hidden group">
-                    <i class="fas fa-palette absolute -bottom-6 -right-6 text-9xl text-white opacity-5 group-hover:rotate-12 transition-transform duration-700"></i>
-                    <div class="text-center mb-6 relative z-10">
-                        <span class="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold tracking-wider mb-3 backdrop-blur-sm">TEMA ACARA TAHUN INI</span>
-                        <h2 class="font-brush text-4xl md:text-5xl text-accent transform -rotate-2 leading-tight">"Dari Hobi Menjadi Pundi-Pundi"</h2>
+                <div class="bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 rounded-3xl p-6 md:p-8 shadow-xl text-white relative overflow-hidden group">
+                    <div class="absolute -top-4 -right-4 text-white/10 text-7xl transform rotate-12 transition-transform duration-700 group-hover:rotate-45"><i class="fas fa-palette"></i></div>
+                    <div class="absolute bottom-4 right-6 text-white/10 text-5xl transform -rotate-12"><i class="fas fa-store"></i></div>
+                    
+                    <div class="text-center mb-5 relative z-10">
+                        <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-[10px] font-semibold tracking-widest mb-2 backdrop-blur-sm border border-white/10">TEMA PAMERAN</span>
+                        <h2 class="font-brush text-4xl md:text-5xl text-accent transform -rotate-2 leading-tight drop-shadow-md">"Dari Hobi Menjadi Pundi-Pundi"</h2>
                     </div>
-                    <div class="space-y-4 text-sm font-medium relative z-10">
-                        <div class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl hover:bg-white/10 transition">
-                            <div class="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-300 shrink-0"><i class="fas fa-calendar-alt"></i></div>
-                            <div><p class="text-gray-400 text-xs">Tanggal</p><p>Senin, 11 Mei 2026</p></div>
+                    
+                    <div class="space-y-3 text-xs md:text-sm font-medium relative z-10">
+                        <div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-sm border border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-teal-400/20 flex items-center justify-center text-teal-300 shrink-0 text-lg"><i class="fas fa-calendar-alt"></i></div>
+                            <div><p class="text-gray-400 text-[10px] uppercase tracking-wider mb-0.5">Waktu</p><p>Senin, 11 Mei 2026 &bull; 08.30 WITA</p></div>
                         </div>
-                        <div class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl hover:bg-white/10 transition">
-                            <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-300 shrink-0"><i class="fas fa-map-marker-alt"></i></div>
-                            <div><p class="text-gray-400 text-xs">Lokasi</p><p>Lapangan Utama SMPN 2 Soyo Jaya</p></div>
+                        <div class="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-sm border border-white/5">
+                            <div class="w-10 h-10 rounded-full bg-pink-400/20 flex items-center justify-center text-pink-300 shrink-0 text-lg"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><p class="text-gray-400 text-[10px] uppercase tracking-wider mb-0.5">Lokasi</p><p>Lapangan Utama Sekolah</p></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Statistik Realtime -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-white rounded-3xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-teal-50 text-primary flex items-center justify-center text-xl pulse-soft">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-4 shadow-sm border border-teal-100 flex flex-col justify-center items-center text-center">
+                        <div class="w-10 h-10 rounded-full bg-teal-100 text-primary flex items-center justify-center text-lg mb-2 pulse-soft">
                             <i class="fas fa-users"></i>
                         </div>
-                        <div>
-                            <p class="text-xs text-gray-500 font-medium">Total Kehadiran</p>
-                            <!-- ID ini akan diupdate oleh Javascript -->
-                            <p class="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                                <span id="counterHadir">...</span> 
-                                <span class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-semibold relative -top-1">LIVE</span>
-                            </p>
-                        </div>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wide">Total Hadir</p>
+                        <p class="text-3xl font-extrabold text-gray-800 flex items-center gap-2">
+                            <span id="counterHadir">...</span> 
+                        </p>
                     </div>
-                    <div class="bg-white rounded-3xl p-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
-                        <p class="text-xs text-gray-500 font-medium mb-2">Pengunjung Terbaru</p>
-                        <!-- Container Avatar akan diisi oleh Javascript -->
-                        <div class="flex -space-x-2 overflow-hidden" id="recentVisitors">
-                            <div class="animate-pulse flex -space-x-2">
-                                <div class="rounded-full bg-slate-200 h-8 w-8 ring-2 ring-white"></div>
-                                <div class="rounded-full bg-slate-200 h-8 w-8 ring-2 ring-white"></div>
-                                <div class="rounded-full bg-slate-200 h-8 w-8 ring-2 ring-white"></div>
+                    <div class="bg-white/80 backdrop-blur-lg rounded-3xl p-4 shadow-sm border border-teal-100 flex flex-col justify-center items-center text-center">
+                        <p class="text-[10px] text-gray-500 font-bold uppercase tracking-wide mb-2">Tamu Terbaru</p>
+                        <div class="flex -space-x-3 overflow-hidden p-1" id="recentVisitors">
+                            <div class="animate-pulse flex -space-x-3">
+                                <div class="rounded-full bg-gray-200 h-10 w-10 ring-2 ring-white"></div>
+                                <div class="rounded-full bg-gray-200 h-10 w-10 ring-2 ring-white"></div>
+                                <div class="rounded-full bg-gray-200 h-10 w-10 ring-2 ring-white"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- KOLOM KANAN (Formulir Buku Tamu) -->
             <div class="lg:col-span-7 fade-in-up" style="animation-delay: 0.2s;">
-                <div class="bg-white/90 backdrop-blur-xl rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-white p-6 sm:p-10 relative overflow-hidden">
+                <div class="bg-white/90 backdrop-blur-xl rounded-[2rem] shadow-lg border border-gray-100 p-5 md:p-8 relative overflow-hidden">
                     
-                    <div class="flex justify-between items-center mb-8 border-b border-gray-100 pb-6">
-                        <h2 class="text-2xl font-bold text-gray-800">Form Pendaftaran Hadir</h2>
+                    <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-100">
+                        <div class="bg-teal-50 text-teal-600 p-2 rounded-lg"><i class="fas fa-edit"></i></div>
+                        <h2 class="text-xl font-bold text-gray-800">Silakan Isi Data Anda</h2>
                     </div>
 
-                    <form id="guestForm" class="space-y-6">
+                    <form id="guestForm" class="space-y-5">
                         
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <!-- Field Nama -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div class="input-group">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap <span class="text-secondary">*</span></label>
+                                <label class="block text-[11px] font-bold text-gray-600 uppercase tracking-wide mb-1.5 ml-1">Nama Lengkap <span class="text-secondary">*</span></label>
                                 <div class="relative">
-                                    <div class="icon-wrap absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 transition-colors"><i class="fas fa-user"></i></div>
-                                    <input type="text" name="nama" required class="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all shadow-sm text-sm" placeholder="Contoh: Budi Santoso">
+                                    <div class="icon-wrap absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400"><i class="fas fa-user text-sm"></i></div>
+                                    <input type="text" name="nama" required class="w-full pl-10 pr-3 py-2.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-teal-400 focus:border-teal-400 outline-none transition-all text-sm" placeholder="Contoh: Budi Santoso">
                                 </div>
                             </div>
 
-                            <!-- Field Kategori -->
                             <div class="input-group">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori <span class="text-secondary">*</span></label>
+                                <label class="block text-[11px] font-bold text-gray-600 uppercase tracking-wide mb-1.5 ml-1">Kategori Pengunjung <span class="text-secondary">*</span></label>
                                 <div class="relative">
-                                    <div class="icon-wrap absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 transition-colors"><i class="fas fa-tag"></i></div>
-                                    <select name="kategori" required class="w-full pl-12 pr-10 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all shadow-sm text-sm appearance-none cursor-pointer">
+                                    <div class="icon-wrap absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400"><i class="fas fa-tag text-sm"></i></div>
+                                    <select name="kategori" required class="w-full pl-10 pr-8 py-2.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-teal-400 outline-none transition-all text-sm appearance-none cursor-pointer">
                                         <option value="" disabled selected>Pilih Kategori...</option>
                                         <option value="Masyarakat Umum">Masyarakat Umum</option>
                                         <option value="Orang Tua / Wali Murid">Orang Tua / Wali Murid</option>
@@ -160,79 +147,86 @@
                                         <option value="Tamu Undangan">Tamu Undangan VIP</option>
                                         <option value="Instansi Pemerintah">Instansi Pemerintah / Dinas</option>
                                     </select>
-                                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500"><i class="fas fa-chevron-down text-xs"></i></div>
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400"><i class="fas fa-chevron-down text-xs"></i></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Field Instansi (Sekarang Opsional) -->
                         <div class="input-group">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Instansi / Asal Sekolah <span class="text-xs font-normal text-gray-400 ml-1">(Opsional)</span></label>
+                            <label class="block text-[11px] font-bold text-gray-600 uppercase tracking-wide mb-1.5 ml-1">Instansi / Asal Sekolah <span class="text-[10px] font-normal text-gray-400 capitalize">(Opsional)</span></label>
                             <div class="relative">
-                                <div class="icon-wrap absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 transition-colors"><i class="fas fa-building"></i></div>
-                                <input type="text" name="instansi" class="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all shadow-sm text-sm" placeholder="Kosongkan jika pengunjung umum">
+                                <div class="icon-wrap absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400"><i class="fas fa-building text-sm"></i></div>
+                                <input type="text" name="instansi" class="w-full pl-10 pr-3 py-2.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-teal-400 outline-none transition-all text-sm" placeholder="Kosongkan jika pengunjung umum">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <!-- Field No HP -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div class="input-group">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Nomor HP/WA <span class="text-xs font-normal text-gray-400 ml-1">(Opsional)</span></label>
+                                <label class="block text-[11px] font-bold text-gray-600 uppercase tracking-wide mb-1.5 ml-1">No. HP/WA <span class="text-[10px] font-normal text-gray-400 capitalize">(Opsional)</span></label>
                                 <div class="relative">
-                                    <div class="icon-wrap absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 transition-colors"><i class="fas fa-phone-alt"></i></div>
-                                    <input type="tel" name="nohp" class="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all shadow-sm text-sm" placeholder="0812-xxxx-xxxx">
+                                    <div class="icon-wrap absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400"><i class="fas fa-phone-alt text-sm"></i></div>
+                                    <input type="tel" name="nohp" class="w-full pl-10 pr-3 py-2.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-teal-400 outline-none transition-all text-sm" placeholder="0812-xxxx-xxxx">
                                 </div>
                             </div>
 
-                             <!-- Field Jumlah Hadir -->
                              <div class="input-group">
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">Jumlah Kehadiran <span class="text-secondary">*</span></label>
+                                <label class="block text-[11px] font-bold text-gray-600 uppercase tracking-wide mb-1.5 ml-1">Jumlah Kehadiran <span class="text-secondary">*</span></label>
                                 <div class="relative flex items-center">
-                                    <button type="button" onclick="ubahJumlah(-1)" class="absolute left-1 w-10 h-10 flex justify-center items-center rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 transition"><i class="fas fa-minus text-xs"></i></button>
-                                    <input type="number" id="jumlahHadirInput" name="jumlah" value="1" min="1" max="20" class="w-full text-center py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-teal-500 outline-none text-lg font-bold shadow-sm" readonly>
-                                    <button type="button" onclick="ubahJumlah(1)" class="absolute right-1 w-10 h-10 flex justify-center items-center rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 transition"><i class="fas fa-plus text-xs"></i></button>
+                                    <button type="button" onclick="ubahJumlah(-1)" class="absolute left-1 w-8 h-8 flex justify-center items-center rounded-lg bg-white border border-gray-200 hover:bg-gray-100 text-gray-600 shadow-sm transition"><i class="fas fa-minus text-xs"></i></button>
+                                    <input type="number" id="jumlahHadirInput" name="jumlah" value="1" min="1" max="20" class="w-full text-center py-2.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-400 outline-none text-base font-bold" readonly>
+                                    <button type="button" onclick="ubahJumlah(1)" class="absolute right-1 w-8 h-8 flex justify-center items-center rounded-lg bg-white border border-gray-200 hover:bg-gray-100 text-gray-600 shadow-sm transition"><i class="fas fa-plus text-xs"></i></button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Field Pesan Kesan -->
                         <div class="input-group">
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">Pesan & Kesan untuk Acara <span class="text-xs font-normal text-gray-400 ml-1">(Opsional)</span></label>
+                            <label class="block text-[11px] font-bold text-gray-600 uppercase tracking-wide mb-1.5 ml-1">Pesan & Kesan <span class="text-[10px] font-normal text-gray-400 capitalize">(Opsional)</span></label>
                             <div class="relative">
-                                <div class="icon-wrap absolute inset-y-0 left-0 pl-4 pt-4 pointer-events-none text-gray-400 transition-colors"><i class="fas fa-comment-dots"></i></div>
-                                <textarea name="pesan" rows="2" class="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all shadow-sm text-sm resize-none" placeholder="Tulis dukungan Anda untuk siswa di sini..."></textarea>
+                                <div class="icon-wrap absolute inset-y-0 left-0 pl-3.5 pt-3.5 pointer-events-none text-gray-400"><i class="fas fa-comment-dots text-sm"></i></div>
+                                <textarea name="pesan" rows="2" class="w-full pl-10 pr-3 py-2.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-teal-400 outline-none transition-all text-sm resize-none" placeholder="Berikan dukungan Anda untuk siswa..."></textarea>
                             </div>
                         </div>
 
-                        <!-- Tombol Submit -->
-                        <button type="submit" id="submitBtn" class="w-full flex justify-center py-4 px-4 border border-transparent text-base font-bold rounded-2xl text-white bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-500/30 shadow-lg transform hover:-translate-y-1 transition-all mt-8">
-                            <span class="flex items-center gap-2">DAFTAR HADIR <i class="fas fa-paper-plane"></i></span>
+                        <div class="flex items-start gap-2 pt-2">
+                            <input type="checkbox" id="agree" required class="mt-1 h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded cursor-pointer">
+                            <label for="agree" class="text-[11px] text-gray-500 leading-tight cursor-pointer">
+                                Saya bersedia data kehadiran ini dicatat sebagai bentuk apresiasi terhadap karya kreatif murid.
+                            </label>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full flex justify-center items-center gap-2 py-3.5 px-4 border border-transparent text-sm font-bold rounded-xl text-white bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 shadow-md hover:shadow-lg transform active:scale-[0.98] transition-all mt-6">
+                            <span>DAFTAR HADIR</span>
+                            <i class="fas fa-paper-plane text-xs"></i>
                         </button>
                     </form>
-
-                    <!-- Notifikasi Sukses Overlay -->
-                    <div id="successOverlay" class="hidden absolute inset-0 bg-white z-20 flex-col items-center justify-center p-8 text-center fade-in-up rounded-[2.5rem]">
-                        <div class="w-24 h-24 mb-6 rounded-full bg-green-100 flex items-center justify-center pulse-soft">
-                            <i class="fas fa-check text-5xl text-green-500"></i>
-                        </div>
-                        <h3 class="text-3xl font-extrabold text-gray-900 mb-3">Check-in Berhasil!</h3>
-                        <p class="text-gray-600 mb-8 max-w-sm">Data kunjungan Anda telah tersimpan. Selamat menikmati pameran karya seni dan bazar kreativitas siswa-siswi kami.</p>
-                        <button onclick="location.reload()" class="px-8 py-3.5 bg-gray-900 text-white font-bold rounded-xl shadow-md hover:bg-gray-800 transition-colors w-full sm:w-auto">
-                            Tutup & Isi Form Baru
-                        </button>
-                    </div>
-
                 </div>
             </div>
         </div>
         
-        <div class="mt-12 text-center text-sm font-medium text-gray-400">
-            &copy; 2026 Pameran Kreativitas Murid Kelas IX &bull; SMPN 2 Soyo Jaya
+        <div class="mt-10 text-center text-[10px] md:text-xs font-medium text-gray-400 relative z-10">
+            <p>&copy; 2026 Rahmat Hidayat H. (@spenda-digi) | SMP Negeri 2 Soyo Jaya.</p>
+        </div>
+    </div>
+
+    <div id="successModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-gray-900/40 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[2rem] p-6 md:p-8 max-w-sm w-full text-center shadow-2xl relative overflow-hidden" id="successModalContent">
+            <div class="absolute -top-10 -right-10 w-24 h-24 bg-teal-100 rounded-full blur-xl opacity-60"></div>
+            
+            <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-tr from-green-400 to-green-300 flex items-center justify-center shadow-lg shadow-green-200">
+                <i class="fas fa-check text-4xl text-white"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-gray-800 mb-2 font-poppins">Berhasil!</h3>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+                Terima kasih atas partisipasi Anda mendukung pameran kreativitas murid kami.
+            </p>
+            <button onclick="tutupModal()" class="w-full py-3 bg-gray-900 text-white text-sm font-bold rounded-xl hover:bg-gray-800 active:scale-[0.98] transition-all">
+                Tutup & Kembali
+            </button>
         </div>
     </div>
 
     <script>
-        // URL DATABASE (TIDAK PERLU DIGANTI, SUDAH MENGGUNAKAN URL ANDA)
+        // GANTI URL DI BAWAH INI SESUAI SCRIPT ANDA
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyXg2qaYEPRY7dwlyucvy5fSEyfVjrZ7YK4Dy5VruKwsYxp5GN5kxC-a64A3LUfZ4Jg/exec';
         
         // 1. Fungsi Tambah/Kurang Jumlah Hadir
@@ -242,62 +236,77 @@
             if(current + val >= 1 && current + val <= 20) { input.value = current + val; }
         }
 
-        // 2. FETCH DATA REALTIME SAAT HALAMAN DIBUKA
-        window.addEventListener('DOMContentLoaded', () => {
-            fetch(scriptURL)
+        // 2. FUNGSI FETCH DATA REALTIME (Anti-Cache)
+        function fetchRealtimeData() {
+            // Tambahkan timestamp agar browser tidak membaca cache lama
+            const urlAntiCache = scriptURL + "?t=" + new Date().getTime();
+            
+            fetch(urlAntiCache)
                 .then(response => response.json())
                 .then(data => {
                     // Update Total Hadir
                     document.getElementById('counterHadir').innerText = data.total || 0;
                     
-                    // Update Avatar Pengunjung Terbaru
+                    // Update Avatar
                     const avatarContainer = document.getElementById('recentVisitors');
                     if(data.recent && data.recent.length > 0) {
-                        avatarContainer.innerHTML = ''; // Kosongkan skeleton loading
+                        avatarContainer.innerHTML = ''; 
                         data.recent.forEach(nama => {
-                            // Membuat avatar menggunakan inisial nama
                             const img = document.createElement('img');
-                            img.className = 'inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover bg-white';
-                            img.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(nama)}&background=0d9488&color=fff&bold=true`;
+                            img.className = 'inline-block h-10 w-10 md:h-12 md:w-12 rounded-full ring-2 ring-white object-cover bg-teal-50 shadow-sm';
+                            img.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(nama)}&background=0d9488&color=fff&bold=true&font-size=0.4`;
                             img.alt = nama;
                             img.title = nama;
                             avatarContainer.appendChild(img);
                         });
                     } else {
-                        avatarContainer.innerHTML = '<span class="text-xs text-gray-400">Belum ada data</span>';
+                        avatarContainer.innerHTML = '<span class="text-xs text-gray-400">Belum ada tamu</span>';
                     }
                 })
-                .catch(error => console.log('Gagal memuat data realtime:', error));
-        });
+                .catch(error => console.log('Gagal memuat data:', error));
+        }
 
-        // 3. LOGIKA SUBMIT FORM KE GOOGLE SHEETS
+        // Panggil saat halaman pertama dibuka
+        window.addEventListener('DOMContentLoaded', fetchRealtimeData);
+
+        // 3. LOGIKA SUBMIT & MODAL NOTIFIKASI
         const form = document.getElementById('guestForm');
         const btn = document.getElementById('submitBtn');
-        const successOverlay = document.getElementById('successOverlay');
+        const successModal = document.getElementById('successModal');
+        const successModalContent = document.getElementById('successModalContent');
+
+        function tutupModal() {
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+            form.reset(); // Kosongkan form untuk tamu berikutnya
+        }
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             
-            // Ubah tombol jadi loading
             const originalBtnContent = btn.innerHTML;
-            btn.innerHTML = `<span class="flex items-center gap-2"><i class="fas fa-circle-notch fa-spin"></i> MENYIMPAN DATA...</span>`;
+            btn.innerHTML = `<i class="fas fa-circle-notch fa-spin"></i> MEMPROSES...`;
             btn.disabled = true;
             btn.classList.add('opacity-80', 'cursor-not-allowed');
 
-            // KIRIM DATA (mode: 'no-cors' mengatasi masalah pengiriman diblokir browser)
-            fetch(scriptURL, { 
-                method: 'POST', 
-                body: new FormData(form),
-                mode: 'no-cors' 
-            })
+            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
             .then(() => {
-                // Tampilkan Animasi Notifikasi Sukses
-                form.classList.add('hidden');
-                successOverlay.classList.remove('hidden');
-                successOverlay.classList.add('flex');
+                // Tampilkan Modal Animasi Bounce
+                successModal.classList.remove('hidden');
+                successModal.classList.add('flex');
+                successModalContent.classList.add('modal-bounce-in');
+                
+                // Kembalikan tombol form
+                btn.innerHTML = originalBtnContent;
+                btn.disabled = false;
+                btn.classList.remove('opacity-80', 'cursor-not-allowed');
+
+                // !! PEMBARUAN REALTIME SANGAT PENTING !!
+                // Tunggu 1.5 detik agar Google Sheets selesai menyimpan data, 
+                // lalu ambil ulang data terbaru untuk memperbarui angka di layar
+                setTimeout(fetchRealtimeData, 1500);
             })
             .catch(error => {
-                console.error('Error!', error.message);
                 alert('Gagal mengirim data. Pastikan koneksi internet stabil.');
                 btn.innerHTML = originalBtnContent;
                 btn.disabled = false;
